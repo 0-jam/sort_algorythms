@@ -23,3 +23,21 @@ def bogo_sort(orig_list):
             break
 
     return shuffled_list
+
+
+def bogo_search(orig_list, query=1):
+    count = 0
+    start_time = time.time()
+
+    while True:
+        found = shuffle(orig_list)[0]
+        count += 1
+        elapsed_time = time.time() - start_time
+
+        print("found: {}, count: {}, elapsed time: {:.3f}sec".format(found, count, elapsed_time), end='\r', flush=True)
+
+        if found == query:
+            print('')
+            break
+
+    return found
