@@ -1,29 +1,5 @@
-import random
-import time
 from modules.list_generator import generate_random_list
-
-
-def shuffle(list):
-    return random.sample(list, k=len(list))
-
-
-def bogo_sort(list):
-    count = 0
-    start_time = time.time()
-    sorted_list = sorted(list)
-
-    while True:
-        shuffled_list = shuffle(list)
-        count += 1
-        elapsed_time = time.time() - start_time
-
-        print("list: {}, count: {}, elapsed time: {:.3f}sec".format(shuffled_list, count, elapsed_time), end='\r', flush=True)
-
-        if shuffled_list == sorted_list:
-            print('')
-            break
-
-    return sorted_list
+from modules.sorter import bogo_sort
 
 
 def main():
