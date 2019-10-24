@@ -4,12 +4,18 @@ Various non-pragmatic snippets
 
 ---
 
+1. [Environment](#environment)
 1. [Installation](#installation)
 1. [Usage](#usage)
 1. [Bogo search](#bogo-search)
 1. [Monkey text generator](#monkey-text-generator)
 
 ---
+
+## Environment
+
+- Arch Linux x86_64 (2019/10/24)
+- Python 3.7.4
 
 ## Installation
 
