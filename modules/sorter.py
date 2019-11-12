@@ -2,6 +2,8 @@ import random
 import time
 from collections import deque
 
+from modules.list_generator import random_swap, swap_list
+
 
 def shuffle(orig_list):
     return random.sample(orig_list, k=len(orig_list))
@@ -57,13 +59,8 @@ def swap_lr(orig_list):
     return list(orig_list_dq)
 
 
-# Swap a and b in orig_list
-# It changes orig_list
-def swap_list(orig_list, a, b):
-    orig_list[a], orig_list[b] = orig_list[b], orig_list[a]
-
-
 def stooge_sort(orig_list, l_end, r_end):
+    print('list:'.format(orig_list), end='\r')
     if l_end > r_end:
         return
 
@@ -81,5 +78,24 @@ def stooge_sort(orig_list, l_end, r_end):
         stooge_sort(orig_list, l_end=l_end, r_end=r_end - index_13)
         stooge_sort(orig_list, l_end=l_end + index_13, r_end=r_end)
         stooge_sort(orig_list, l_end=l_end, r_end=r_end - index_13)
+
+    return orig_list
+
+
+def bozo_sort(orig_list):
+    count = 0
+    start_time = time.time()
+    sorted_list = sorted(orig_list)
+
+    while True:
+        random_swap(orig_list)
+        count += 1
+        elapsed_time = time.time() - start_time
+
+        print("list: {}, count: {}, elapsed time: {:.3f}sec".format(orig_list, count, elapsed_time), end='\r', flush=True)
+
+        if orig_list == sorted_list:
+            print('')
+            break
 
     return orig_list
