@@ -4,7 +4,7 @@ from modules.sorter import bozo_sort
 
 def main():
     num_range = 10
-    list_size = 20
+    list_size = 10
 
     orig_list = generate_random_list(num_range, list_size)
     sorted_list = bozo_sort(orig_list)
