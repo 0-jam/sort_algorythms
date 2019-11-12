@@ -7,6 +7,7 @@ Various non-pragmatic snippets
 1. [Environment](#environment)
 1. [Installation](#installation)
 1. [Usage](#usage)
+1. [List of implemented sort algorythms](#list-of-implemented-sort-algorythms)
 1. [Search algorythms](#search-algorythms)
    1. [Bogo search](#bogo-search)
    1. [Bozo search](#bozo-search)
@@ -32,6 +33,12 @@ They accept no command line argument, so just specify the file name to use
 # For example:
 $ python bogo.py
 ```
+
+## List of implemented sort algorythms
+
+- Bogosort
+- Bozo sort
+- Stooge soort
 
 ## Search algorythms
 
