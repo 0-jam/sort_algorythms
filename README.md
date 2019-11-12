@@ -7,8 +7,11 @@ Various non-pragmatic snippets
 1. [Environment](#environment)
 1. [Installation](#installation)
 1. [Usage](#usage)
-1. [Bogo search](#bogo-search)
-1. [Monkey text generator](#monkey-text-generator)
+1. [Search algorythms](#search-algorythms)
+   1. [Bogo search](#bogo-search)
+   1. [Bozo search](#bozo-search)
+1. [Text manipulation](#text-manipulation)
+   1. [Monkey text generator](#monkey-text-generator)
 
 ---
 
@@ -30,14 +33,23 @@ They accept no command line argument, so just specify the file name to use
 $ python bogo.py
 ```
 
-## Bogo search
+## Search algorythms
+
+### Bogo search
 
 1. Shuffle the list
 1. Extract the first element from the shuffled list
 1. If the extracted element matches the query, return the extracted element
     - BUG: If the query does not exist in the list, this program will never end
 
-## Monkey text generator
+### Bozo search
+
+1. Swap randomly chosen element for another randomly chosen element in the list
+1. Do the same thing as [bogo search](#bogo-search)
+
+## Text manipulation
+
+### Monkey text generator
 
 The text generator based on [Infinite monkey theorem](https://en.wikipedia.org/wiki/Infinite_monkey_theorem)
 

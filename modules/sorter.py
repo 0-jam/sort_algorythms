@@ -1,6 +1,7 @@
 import random
 import time
 from collections import deque
+from copy import deepcopy
 
 from modules.list_generator import random_swap, swap_list
 
@@ -46,7 +47,7 @@ def bogo_search(orig_list, query=1):
     return found
 
 
-# Swap the first element and the last element in orig_list
+# Swap the first element for the last element in orig_list
 def swap_lr(orig_list):
     orig_list_dq = deque(orig_list)
 
@@ -99,3 +100,24 @@ def bozo_sort(orig_list):
             break
 
     return orig_list
+
+
+def bozo_search(orig_list, query=1):
+    count = 0
+    start_time = time.time()
+    # Create the deep copy for keeping the original list
+    target_list = deepcopy(orig_list)
+
+    while True:
+        random_swap(target_list)
+        found = target_list[0]
+        count += 1
+        elapsed_time = time.time() - start_time
+
+        print("found: {}, count: {}, elapsed time: {:.3f}sec".format(found, count, elapsed_time), end='\r', flush=True)
+
+        if found == query:
+            print('')
+            break
+
+    return found
