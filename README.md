@@ -27,18 +27,19 @@ They have no dependency at now
 
 ## Usage
 
-They accept no command line argument, so just specify the file name to use
+They accept no command line argument, so just specify the file name to use except monkey_generator.py
 
 ```
 # For example:
 $ python bogo.py
+$ python monkey_generator.py --infinity
 ```
 
 ## List of implemented sort algorythms
 
 - Bogosort
 - Bozo sort
-- Stooge soort
+- Stooge sort
 
 ## Search algorythms
 
