@@ -62,7 +62,7 @@ def swap_lr(orig_list):
 
 def stooge_sort(orig_list, l_end, r_end):
     print('list:'.format(orig_list), end='\r')
-    if l_end > r_end:
+    if l_end >= r_end:
         return
 
     if orig_list[l_end] > orig_list[r_end]:
@@ -121,3 +121,18 @@ def bozo_search(orig_list, query=1):
             break
 
     return found
+
+
+def slow_sort(orig_list, l_end, r_end):
+    print('list:'.format(orig_list), end='\r', flush=True)
+    if l_end >= r_end:
+        return
+
+    idx_center = int((r_end + l_end) / 2)
+    slow_sort(orig_list, l_end, idx_center)
+    slow_sort(orig_list, idx_center + 1, r_end)
+    if orig_list[idx_center] > orig_list[r_end]:
+        swap_list(orig_list, idx_center, r_end)
+    slow_sort(orig_list, l_end, r_end - 1)
+
+    return orig_list

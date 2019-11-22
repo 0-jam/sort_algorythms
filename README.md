@@ -18,8 +18,8 @@ Various non-pragmatic snippets
 
 ## Environment
 
-- Arch Linux x86_64 (2019/10/24)
-- Python 3.7.4
+- Arch Linux x86_64 (2019/11/22)
+- Python 3.8.0
 
 ## Installation
 
@@ -40,6 +40,7 @@ $ python monkey_generator.py --infinity
 - Bogosort
 - Bozo sort
 - Stooge sort
+- Slow sort
 
 ## Search algorythms
 
