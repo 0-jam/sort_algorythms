@@ -7,19 +7,21 @@ Various non-pragmatic snippets
 1. [Environment](#environment)
 1. [Installation](#installation)
 1. [Usage](#usage)
+   1. [monkey_generator.py](#monkey_generatorpy)
+   1. [avg_gen.py](#avg_genpy)
 1. [List of implemented sort algorythms](#list-of-implemented-sort-algorythms)
 1. [Search algorythms](#search-algorythms)
    1. [Bogo search](#bogo-search)
    1. [Bozo search](#bozo-search)
-1. [Text manipulation](#text-manipulation)
+1. [Text manipulators](#text-manipulators)
    1. [Monkey text generator](#monkey-text-generator)
 
 ---
 
 ## Environment
 
-- Arch Linux x86_64 (2019/11/22)
-- Python 3.8.0
+- Arch Linux x86_64 (2020/1/30)
+- Python 3.8.1
 
 ## Installation
 
@@ -27,12 +29,23 @@ They have no dependency at now
 
 ## Usage
 
-They accept no command line argument, so just specify the file name to use except monkey_generator.py
+- `-h` for more information
+
+### monkey_generator.py
+
+To enable infinite generation mode,
+
+`$ python monkey_generator.py --infinity`
+
+### avg_gen.py
+
+You can specify length of the list (`-l`), average value (`-a`), and range of values (`-r`).
+
+If you specified `--low`, it will generate the list that has average value lower than `-a` option.
 
 ```
-# For example:
-$ python bogo.py
-$ python monkey_generator.py --infinity
+python avg_gen.py -l 20 -a 12 -r 30
+[1, 3, 23, 23, 18, 25, 22, 8, 12, 7, 8, 29, 17, 15, 25, 20, 14, 22, 11, 27]
 ```
 
 ## List of implemented sort algorythms
@@ -56,7 +69,7 @@ $ python monkey_generator.py --infinity
 1. Swap randomly chosen element for another randomly chosen element in the list
 1. Do the same thing as [bogo search](#bogo-search)
 
-## Text manipulation
+## Text manipulators
 
 ### Monkey text generator
 
