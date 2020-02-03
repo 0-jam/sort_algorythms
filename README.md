@@ -33,9 +33,11 @@ They have no dependency at now
 
 ### monkey_generator.py
 
-To enable infinite generation mode,
+To enable infinite generation mode (`Ctrl + C` to stop),
 
 `$ python monkey_generator.py --infinity`
+
+You can set the number of characters to generate by `-g`, and wait time for each character generation by `-w`.
 
 ### avg_gen.py
 
