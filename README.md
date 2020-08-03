@@ -1,6 +1,6 @@
 # Sort Algorithms
 
-Various non-pragmatic snippets
+Various non-pragmatic snippets. These scripts have no benefit for you.
 
 ---
 
@@ -21,7 +21,8 @@ Various non-pragmatic snippets
 ## Environment
 
 - Arch Linux x86_64 (2020/1/30)
-- Python 3.8.1
+- Windows 10 Insider Preview Build 20180
+- Python 3.8.5
 
 ## Installation
 
