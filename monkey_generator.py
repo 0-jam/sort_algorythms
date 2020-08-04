@@ -3,6 +3,18 @@ from time import sleep
 
 from modules.sorter import shuffle
 
+# All characters on the keyboard as integers
+CHARS = list(range(32, 128)) + [8, 9, 10]
+
+
+def generate_text(gen_size=100):
+    generated_text = ''
+
+    for _ in range(gen_size):
+        generated_text += chr(shuffle(CHARS)[0])
+
+    return generated_text
+
 
 def main():
     parser = argparse.ArgumentParser(description='The text generator based on infinite monkey theorem')
@@ -11,18 +23,15 @@ def main():
     parser.add_argument('--infinity', action='store_true', default=False, help='Infinity mode (Ctrl+C to stop)')
     args = parser.parse_args()
 
-    # All characters on the keyboard as integers
-    chars = list(range(32, 128)) + [8, 9, 10]
-
     try:
         while args.infinity:
-            print(chr(shuffle(chars)[0]), end='', flush=True)
+            print(chr(shuffle(CHARS)[0]), end='', flush=True)
             sleep(args.wait)
         else:
             gen_size = args.gen_size
 
             for _ in range(gen_size):
-                print(chr(shuffle(chars)[0]), end='', flush=True)
+                print(chr(shuffle(CHARS)[0]), end='', flush=True)
                 sleep(args.wait)
     except KeyboardInterrupt:
         print()
