@@ -1,10 +1,9 @@
 import threading
+import multiprocessing as mp
 import time
 
 from modules.list_generator import generate_random_list
 from modules.sorter import bogo_sort
-
-play_event = threading.Event()
 
 
 def play(event):
@@ -19,20 +18,29 @@ def init_player():
     return threading.Thread(target=play, args=(play_event,))
 
 
-def main():
-    orig_list = generate_random_list(list_size=7)
-
-    for i in range(3):
-        player = init_player()
+def sort():
+    play_event = threading.Event()
+    orig_list = generate_random_list(list_size=9)
+    while True:
+        player = threading.Thread(target=play, args=(play_event,))
         player.start()
-
-        print('attempt:', i)
 
         bogo_sort(orig_list)
         play_event.set()
 
-    player.join()
-    print('done')
+
+def main():
+    sorter = mp.Process(target=sort)
+
+    sorter.start()
+
+    try:
+        while True:
+            pass
+    except KeyboardInterrupt:
+        sorter.kill()
+    finally:
+        print('done')
 
 
 if __name__ == '__main__':
