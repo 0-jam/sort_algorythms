@@ -14,10 +14,6 @@ def play(event):
     event.clear()
 
 
-def init_player():
-    return threading.Thread(target=play, args=(play_event,))
-
-
 def sort():
     play_event = threading.Event()
     orig_list = generate_random_list(list_size=9)
@@ -39,6 +35,7 @@ def main():
             pass
     except KeyboardInterrupt:
         sorter.kill()
+        print()
     finally:
         print('done')
 
